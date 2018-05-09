@@ -16,20 +16,5 @@ spec:
       - name: poc2sample
         image: hema4337/poc2team2:poc2-68
         ports:
-        - containerPort: 80
-apiVersion: v1
-kind: Service
-metadata:
-  name: poc2-deployment
-  labels:
-    name: poc2-deployment
-    context: kubernetes-image-exposing
-spec:
-  ports:
-    # the port that this service should serve on
-    - port: 8000
-      protocol: TCP
-  # label keys and values that must match in order to receive traffic for this service
-  selector:
-    name: poc2-deployment
-    context: kubernetes-image-exposing
+        - containerPort: 8080
+
