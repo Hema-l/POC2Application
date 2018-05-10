@@ -1,18 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: poc2-deployment
+  name: poc2-expose
   labels:
     name: poc2-deployment
-    context: kubernetes-image-exposing
 spec:
   type: NodePort
   ports:
     # the port that this service should serve on
     - port: 8080
-      nodePort: 31079
-      protocol: TCP
+      nodePort: 31523
   # label keys and values that must match in order to receive traffic for this service
   selector:
     name: poc2-deployment
-    context: kubernetes-image-exposing
+
