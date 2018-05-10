@@ -1,22 +1,22 @@
 apiVersion: extensions/v1beta1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: poc2-deployment
+  name: poc2-deployment-$BUILD_NUMBER
 spec:
   selector:
     matchLabels:
-      name: poc2-deployment
+      name: poc2-deployment-$BUILD_NUMBER
   replicas: 2 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
       # generated from the deployment name
       labels:
-        name: poc2-deployment
+        name: poc2-deployment-$BUILD_NUMBER
     spec:
       containers:
-      - name: poc2-deployment
-        image: hema4337/poc2team2:poc2-68
+      - name: poc2-deployment-$BUILD_NUMBER
+        image: hema4337/poc2team2:poc2-$BUILD_NUMBER
         ports:
         - containerPort: 8080
 
