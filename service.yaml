@@ -5,7 +5,7 @@ metadata:
   labels:
     name: poc2-deployment-$BUILD_NUMBER
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     # the port that this service should serve on
     - port: 8080
